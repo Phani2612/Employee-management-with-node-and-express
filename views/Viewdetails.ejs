@@ -1,0 +1,172 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Details</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .employee-card {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      text-align: center;
+      overflow: hidden;
+      margin: 10px;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      object-fit: cover;
+    }
+
+    p {
+      color: #666;
+      margin: 5px 0;
+    }
+
+    .flower-animation {
+      animation: bloom 5s infinite;
+    }
+
+    @keyframes bloom {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Here are the employee details</h1>
+  
+    <% for (let i of data) {  %>
+
+      <a href=<%= "/employees/"+i.empid %>><h3><%= i.name %></h3></a>
+      <img src="<%= i.info %>"/>
+
+    <% } %>
+  
+
+  <form method="get">
+    <input type="text" name="sort" value="ASC" hidden/>
+    <button>Sort</button>
+  </form>
+  
+
+
+
+
+
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Details</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .employee-card {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      text-align: center;
+      overflow: hidden;
+      margin: 10px;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      object-fit: cover;
+    }
+
+    .flower-animation {
+      animation: bloom 5s infinite;
+    }
+
+    @keyframes bloom {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <div style="display: flex; flex-direction: column;">
+    <h1>Here are the employee details</h1>
+  
+  <!-- Loop through employee data -->
+  <% for (let i of data) {  %>
+
+    <!-- Employee Card -->
+    <div class="employee-card" >
+      <!-- Link to employee details page -->
+      <a href=<%= "/employees/"+i.empid %>><h3><%= i.name %></h3></a>
+      <!-- Display employee image -->
+      <img src="<%= i.info %>" alt="<%= i.name %>"/>
+    </div>
+    
+  <% } %>
+
+  <form method="get">
+    <input type="text" name="sort" value="ASC" hidden/>
+    <button>Sort</button>
+  </form>
+  </div>
+
+  <!-- Form for sorting -->
+  
+</body>
+</html>
